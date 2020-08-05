@@ -3,7 +3,7 @@ import TskHeader from "../TskHeader";
 import TskFooter from "../TskFooter";
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="tsk-layout">
       <Head>
         <title>Tsk-Card-Nxt-101</title>
         <link rel="icon" href="/favicon.ico" />
@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
         <div>{children}</div>
         <TskFooter />
       </main>
-    </>
+    </div>
   );
 };
 
