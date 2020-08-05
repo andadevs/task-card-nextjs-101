@@ -1,0 +1,13 @@
+$darkslategray-one: #484956;
+$darkslategray-two: #363747;
+$nav-bkg: linear-gradient(
+  180deg,
+  $darkslategray-one 0%,
+  $darkslategray-two 100%
+);
+
+.nav {
+  background: $nav-bkg;
+  padding: 5px 0 0 5px;
+  width: 50px;
+}
