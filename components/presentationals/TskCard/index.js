@@ -1,3 +1,15 @@
+/**
+ * @file components/presentationals/TskCard/index.js
+ * @name Component/Presentational/TskCard
+ * @classdesc Component for card context
+ * @memberof Component/Presentationals
+ * @since v1.0.0
+ * @author boykland/clenondavis <clenondavis@outlook.com>
+ * @example
+ * <TskCard />
+ */
+
+//#region dependencies
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLaptop,
@@ -7,7 +19,16 @@ import {
   faCamera,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
+//#endregion
 
+/**
+ * @function
+ * @name TskCard
+ * @memberof Component/Presentational/TskCard
+ * @description Functional component for card
+ * @param {-} none -
+ * @return {COMPONENT} card component context
+ */
 const TskCard = () => {
   return (
     <div className="tsk-card">

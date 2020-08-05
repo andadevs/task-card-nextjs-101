@@ -1,9 +1,33 @@
-import Head from "next/head";
-import TskNav from "../TskNav";
-import TskFooter from "../TskFooter";
-import styles from "../../../styles/Layout.module.scss";
+/**
+ * @file components/presentationals/TskLayout/index.js
+ * @name Component/Presentational/TskLayout
+ * @classdesc Component for Layout context
+ * @memberof Component/Presentationals
+ * @since v1.0.0
+ * @author boykland/clenondavis <clenondavis@outlook.com>
+ * @example
+ * <TskLayout />
+ */
 
-const Layout = ({ children }) => {
+//#region dependencies
+import Head from "next/head";
+//#endregion
+//#region components
+import { TskNav } from "../";
+//#endregion
+//#region styles
+import styles from "../../../styles/Layout.module.scss";
+//#endregion
+
+/**
+ * @function
+ * @name TskLayout
+ * @memberof Component/Presentational/TskLayout
+ * @description Functional component for layout
+ * @param {OBJECT} children Context for each partial view
+ * @return {COMPONENT} layout component context
+ */
+const TskLayout = ({ children }) => {
   return (
     <div className={styles.layout}>
       <Head>
@@ -16,7 +40,6 @@ const Layout = ({ children }) => {
           <TskNav />
           <div className={styles.content}>
             <div>{children}</div>
-            <TskFooter />
           </div>
         </div>
       </main>
@@ -24,4 +47,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default TskLayout;
