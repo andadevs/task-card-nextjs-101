@@ -10,7 +10,7 @@
  */
 //#region dependencies
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { faTh } from "@fortawesome/free-solid-svg-icons";
 //#endregion
 //#region styles
 import styles from "../../../styles/Nav.module.scss";
@@ -27,13 +27,11 @@ import styles from "../../../styles/Nav.module.scss";
 const TskNav = () => {
   return (
     <div className={styles.nav}>
-      <div>
-        <ul>
-          <li>
-            <FontAwesomeIcon className="tsk-icon" icon={faBell} />
-          </li>
-        </ul>
-      </div>
+      <ul className={styles.menu}>
+        <li className={styles.item}>
+          <FontAwesomeIcon className="tsk-icon" icon={faTh} />
+        </li>
+      </ul>
     </div>
   );
 };
