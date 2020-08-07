@@ -8,9 +8,19 @@
  * @example
  * <Task />
  */
+
+//#region dependencies
+import { useEffect } from "react";
+//#endregion
 //#region component
 import { TskCard } from "../../components/presentationals";
 //#endregion
+//#region services/hooks
+import { taskHks } from "../../services/hooks";
+import { taskSvc } from "../../services";
+//#endregion
+
+const { useAllTasks } = taskHks;
 
 /**
  * @function
@@ -20,9 +30,12 @@ import { TskCard } from "../../components/presentationals";
  * @return {COMPONENT} Task component context
  */
 const Task = () => {
+  const [{ allTasks }] = useAllTasks();
   return (
-    <div className="pd--t--2">
-      <TskCard />
+    <div className="pd--t--2 flex-container flex-container--wrap">
+      {allTasks.map((task) => (
+        <TskCard key={task.id} data={task} />
+      ))}
     </div>
   );
 };

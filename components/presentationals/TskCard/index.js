@@ -17,8 +17,9 @@ import {
   faCircle,
   faCheckCircle,
   faCamera,
-  faTimes,
+  faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import ImageUploading from "react-images-uploading";
 //#endregion
 //#region component
 import { TskTag } from "../";
@@ -35,7 +36,9 @@ import { cardStyle } from "../../../styles";
  * @param {-} none -
  * @return {COMPONENT} card component context
  */
-const TskCard = () => {
+const TskCard = ({ data }) => {
+  const { title, due_date, is_completed } = data;
+
   return (
     <div className={cardStyle.card}>
       <div className={cardStyle.header}>
@@ -44,21 +47,60 @@ const TskCard = () => {
         </div>
         <div className={cardStyle.titleContainer}>
           <h1 className={cardStyle.title}>
-            <span className={cardStyle.text}>Write a program</span>
+            <span className={cardStyle.text}>{title}</span>
           </h1>
-          <TskTag icon={faBell} text="4/8/2019" />
+          <TskTag icon={faBell} text={due_date} />
         </div>
         <div className={cardStyle.check}>
-          <FontAwesomeIcon className={cardStyle.uncheck} icon={faCircle} />
-          <FontAwesomeIcon className={cardStyle.checked} icon={faCheckCircle} />
+          {is_completed ? (
+            <FontAwesomeIcon
+              className={cardStyle.checked}
+              icon={faCheckCircle}
+            />
+          ) : (
+            <FontAwesomeIcon className={cardStyle.uncheck} icon={faCircle} />
+          )}
         </div>
       </div>
       <div className={cardStyle.content}>
-        <div className={cardStyle.boxPlaceholder}>
-          <FontAwesomeIcon className="tsk-icon" icon={faCamera} />
-        </div>
-        <div className="tsk-box tsk-box--default">
-          <FontAwesomeIcon className="tsk-icon" icon={faTimes} />
+        <div className={cardStyle.container}>
+          <ImageUploading
+            maxNumber={4}
+            maxFileSize={6000000}
+            multiple
+            acceptType={["jpg", "png"]}
+            onChange={() => {}}
+            onError={() => {}}
+          >
+            {({ imageList, onImageUpload, onImageRemoveAll }) => (
+              <>
+                <div
+                  className={cardStyle.floatFileBoxAccion}
+                  onClick={onImageUpload}
+                >
+                  <FontAwesomeIcon className={cardStyle.icon} icon={faCamera} />
+                </div>
+                {imageList.map((image) => (
+                  <div key={image.key} className="image-item">
+                    <div className={cardStyle.boxDefault}>
+                      <img
+                        className={cardStyle.img}
+                        src={image.dataURL}
+                        alt="image"
+                      />
+                      <div className={cardStyle.accion}>
+                        <FontAwesomeIcon
+                          className={cardStyle.close}
+                          icon={faTimesCircle}
+                          onClick={image.onRemove}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </>
+            )}
+          </ImageUploading>
         </div>
       </div>
       <div className="tsk-crd-footer"></div>

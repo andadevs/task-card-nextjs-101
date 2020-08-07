@@ -1,10 +1,15 @@
 $lightslategray-one: #8586a8;
 $honeydew: #e5f4f2;
-$slateblue: #5c65e1;
+$slateblue: #5c64e0;
 $mediumslateblue-rgb: rgb(113, 120, 228);
+$mediumslateblue: #7078e4;
 $lavender: #e5f3f1;
 $darkslategray-one: #363747;
 $black: #080909;
+$gainsboro: #d2dedc;
+
+//img dimention
+$img-default-size: 100px;
 
 .card {
   background-color: $honeydew;
@@ -12,14 +17,18 @@ $black: #080909;
   border-radius: 10px;
   box-shadow: 0 0 5px 0 $lightslategray-one;
   position: relative;
+  max-width: 300px;
+  min-width: 300px;
+  margin: 20px;
 
   .header {
     padding-top: 1em;
+    margin-bottom: 1em;
 
     .iconContainer {
       position: absolute;
       top: -20px;
-      left: 15px;
+      left: 20%;
       font-size: 1.7em;
       font-weight: normal;
       border-radius: 10px;
@@ -40,7 +49,7 @@ $black: #080909;
       .title {
         font-size: 16px;
         word-spacing: 3px;
-        word-wrap: break-word;
+        word-break: break-word;
         line-height: 20px;
         margin: 0;
         color: $darkslategray-one;
@@ -66,12 +75,74 @@ $black: #080909;
   }
 
   .content {
-    margin-top: 20px;
-    padding-top: 5px;
+    .container {
+      display: flex;
+      padding: 10px 0;
+      overflow-y: hidden;
+    }
 
-    .box {
-      &__placeholder {
-        border: 1px solid;
+    .floatFileBoxAccion {
+      flex-shrink: 0;
+      align-self: center;
+      padding: 10px;
+      margin-right: 5px;
+      text-align: center;
+      background-color: $slateblue;
+      box-shadow: 0 0 5px 0 $lightslategray-one;
+      border-radius: 100%;
+      cursor: pointer;
+
+      position: absolute;
+      top: 50px;
+      right: -33px;
+      width: 35px;
+      height: 35px;
+
+      .icon {
+        font-size: 2em;
+        color: $mediumslateblue;
+      }
+    }
+
+    .boxDefault {
+      flex-shrink: 0;
+      padding: 5px;
+      margin: 0 5px;
+      text-align: center;
+      background-color: $lavender;
+      box-shadow: 0 0 2px 0 $lightslategray-one;
+      border-radius: 12px;
+      position: relative;
+      display: inline-block;
+
+      width: $img-default-size;
+      max-width: $img-default-size;
+      height: $img-default-size;
+      max-height: $img-default-size;
+
+      .icon {
+        font-size: 5em;
+        color: $gainsboro;
+      }
+
+      .img {
+        width: $img-default-size;
+        max-width: $img-default-size;
+        height: $img-default-size;
+        max-height: $img-default-size;
+        object-fit: contain;
+      }
+
+      .accion {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+
+        .close {
+          font-size: 1.2em;
+          color: $darkslategray-one;
+          cursor: pointer;
+        }
       }
     }
   }
