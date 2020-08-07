@@ -1,0 +1,78 @@
+$lightslategray-one: #8586a8;
+$honeydew: #e5f4f2;
+$slateblue: #5c65e1;
+$mediumslateblue-rgb: rgb(113, 120, 228);
+$lavender: #e5f3f1;
+$darkslategray-one: #363747;
+$black: #080909;
+
+.card {
+  background-color: $honeydew;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0 $lightslategray-one;
+  position: relative;
+
+  .header {
+    padding-top: 1em;
+
+    .iconContainer {
+      position: absolute;
+      top: -20px;
+      left: 15px;
+      font-size: 1.7em;
+      font-weight: normal;
+      border-radius: 10px;
+      padding: 2px;
+      width: 35px;
+      height: 35px;
+      background-color: $lavender;
+      text-align: center;
+      box-shadow: 0 0 1px 0 $lightslategray-one;
+
+      .icon {
+        font-size: 0.6em;
+        color: $darkslategray-one;
+      }
+    }
+
+    .titleContainer {
+      .title {
+        font-size: 16px;
+        word-spacing: 3px;
+        word-wrap: break-word;
+        line-height: 20px;
+        margin: 0;
+        color: $darkslategray-one;
+        margin-bottom: 10px;
+      }
+    }
+
+    .check {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 1.4em;
+      cursor: pointer;
+
+      .uncheck {
+        color: $darkslategray-one;
+        opacity: 0.4;
+      }
+      .checked {
+        color: $slateblue;
+      }
+    }
+  }
+
+  .content {
+    margin-top: 20px;
+    padding-top: 5px;
+
+    .box {
+      &__placeholder {
+        border: 1px solid;
+      }
+    }
+  }
+}

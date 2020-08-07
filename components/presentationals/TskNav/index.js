@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTh } from "@fortawesome/free-solid-svg-icons";
 //#endregion
 //#region styles
-import styles from "../../../styles/Nav.module.scss";
+import { navStyle } from "../../../styles";
 //#endregion
 
 /**
@@ -26,10 +26,10 @@ import styles from "../../../styles/Nav.module.scss";
  */
 const TskNav = () => {
   return (
-    <div className={styles.nav}>
-      <ul className={styles.menu}>
-        <li className={styles.item}>
-          <FontAwesomeIcon className="tsk-icon" icon={faTh} />
+    <div className={navStyle.nav}>
+      <ul className={navStyle.menu}>
+        <li className={navStyle.item}>
+          <FontAwesomeIcon className={navStyle.icon} icon={faTh} />
         </li>
       </ul>
     </div>

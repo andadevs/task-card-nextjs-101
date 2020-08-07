@@ -16,7 +16,7 @@ import Head from "next/head";
 import { TskNav } from "../";
 //#endregion
 //#region styles
-import styles from "../../../styles/Layout.module.scss";
+import { layoutStyle } from "../../../styles";
 //#endregion
 
 /**
@@ -29,18 +29,16 @@ import styles from "../../../styles/Layout.module.scss";
  */
 const TskLayout = ({ children }) => {
   return (
-    <div className={styles.layout}>
+    <div className={layoutStyle.layout}>
       <Head>
         <title>Tsk-Card-Nxt-101</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <div className={styles.container}>
+        <div className={layoutStyle.container}>
           <TskNav />
-          <div className={styles.content}>
-            <div>{children}</div>
-          </div>
+          <div className={layoutStyle.content}>{children}</div>
         </div>
       </main>
     </div>

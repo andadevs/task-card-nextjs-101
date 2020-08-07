@@ -10,6 +10,7 @@
 import TskLayout from "./TskLayout";
 import TskNav from "./TskNav";
 import TskCard from "./TskCard";
+import TskTag from "./TskTag";
 //#endregion
 
-export { TskLayout, TskNav, TskCard };
+export { TskLayout, TskNav, TskCard, TskTag };

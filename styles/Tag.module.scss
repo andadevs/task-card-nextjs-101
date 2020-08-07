@@ -1,0 +1,21 @@
+$slateblue: #5c64e0;
+$slateblue-rgb: rgba(92, 101, 225, 0.5);
+$mediumslateblue: #7178e4;
+$lavender: #e5f3f1;
+
+.tag {
+  padding: 5px;
+  background-color: $slateblue-rgb;
+  color: $mediumslateblue;
+  border-radius: 5px;
+
+  .icon {
+    margin-right: 5px;
+    opacity: 0.5;
+  }
+
+  .text {
+    color: $lavender;
+    opacity: 0.8;
+  }
+}

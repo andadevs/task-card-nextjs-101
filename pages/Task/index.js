@@ -21,8 +21,7 @@ import { TskCard } from "../../components/presentationals";
  */
 const Task = () => {
   return (
-    <div>
-      <h1>Task Page</h1>;
+    <div className="pd--t--2">
       <TskCard />
     </div>
   );

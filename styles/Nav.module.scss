@@ -22,7 +22,10 @@ $nav-bkg: linear-gradient(
       text-align: center;
       cursor: pointer;
       padding: 10px;
-      color: $lightslategray-one;
+
+      .icon {
+        color: $lightslategray-one;
+      }
     }
   }
 }

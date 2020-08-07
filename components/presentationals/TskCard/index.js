@@ -20,6 +20,12 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 //#endregion
+//#region component
+import { TskTag } from "../";
+//#endregion
+//#region styles
+import { cardStyle } from "../../../styles";
+//#endregion
 
 /**
  * @function
@@ -31,25 +37,24 @@ import {
  */
 const TskCard = () => {
   return (
-    <div className="tsk-card">
-      <div className="tsk-crd-header">
-        <div>
-          <FontAwesomeIcon icon={faLaptop} />
+    <div className={cardStyle.card}>
+      <div className={cardStyle.header}>
+        <div className={cardStyle.iconContainer}>
+          <FontAwesomeIcon className={cardStyle.icon} icon={faLaptop} />
         </div>
-        <div>
-          <h1>Write a program</h1>
-          <span>
-            <FontAwesomeIcon className="tsk-icon" icon={faBell} />
-            <span>4/8/2019</span>
-          </span>
+        <div className={cardStyle.titleContainer}>
+          <h1 className={cardStyle.title}>
+            <span className={cardStyle.text}>Write a program</span>
+          </h1>
+          <TskTag icon={faBell} text="4/8/2019" />
         </div>
-        <div>
-          <FontAwesomeIcon className="tsk-icon" icon={faCircle} />
-          <FontAwesomeIcon className="tsk-icon" icon={faCheckCircle} />
+        <div className={cardStyle.check}>
+          <FontAwesomeIcon className={cardStyle.uncheck} icon={faCircle} />
+          <FontAwesomeIcon className={cardStyle.checked} icon={faCheckCircle} />
         </div>
       </div>
-      <div className="tsk-crd-content">
-        <div className="tsk-box tsk-box--placeholder">
+      <div className={cardStyle.content}>
+        <div className={cardStyle.boxPlaceholder}>
           <FontAwesomeIcon className="tsk-icon" icon={faCamera} />
         </div>
         <div className="tsk-box tsk-box--default">
